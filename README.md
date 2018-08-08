@@ -1,11 +1,4 @@
-# TravelPlanner
 
-It's my pet project which is designed to practice with new stack of web technologies: ASP.NET Core, Angular 2, RxJs. 
-The main purpose is to make it easier to organize trips with your friends.
-
-# Description
-
-When I was going to organize a trip with my friends I had the problems that I solved with this web application. 
 
 List of the main features: 
 
@@ -15,14 +8,9 @@ List of the main features:
 4. Ability to add cars with their petrol usage so an algorithm can calculate how much gas it will consume for the trip.
 5. Localization support (for now it supports English and Russian)
 
-TODO: 
 
-1. Add a budget feature so you can track all spends like for the hotel, gas, etc.
-2. Add a hotel vote feature so you can decide together where to stay during the trip.
 
 # Technical Details
-
-It's a Signle Page Application. I used classical layered architecture which includes:
 
 1. Web UI which is built on top of ASP.NET Core and Angular 4
 2. BusinessLogic layer
