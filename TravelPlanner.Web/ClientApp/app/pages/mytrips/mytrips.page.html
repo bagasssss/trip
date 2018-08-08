@@ -1,0 +1,30 @@
+<div class="row page-header">
+    <div class="col-md-11">
+        <h1 localize="myTripsPageTitle"></h1>
+    </div>
+    <div style="padding-top: 14px" class="col-md-1">
+        <a class="btn btn-primary" [routerLink]="['/newtrip']" localize="createButton"></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th localize="tripTableHeadTitle"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <tr class="cursor-pointer" [routerLink]="['/trip', trip.id]" 
+                *ngFor="let trip of trips; let i=index;">
+                    <td>{{i+1}}</td>
+                    <td><a [routerLink]="['/trip', trip.id]">{{ trip.title }}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

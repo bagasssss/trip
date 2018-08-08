@@ -1,0 +1,5 @@
+Привет, Iarik приглашает вас в путешествие: http://localhost:54555/acceptinvite/3.
+Привет, Iarik приглашает вас в путешествие: http://localhost:54555/acceptinvite/4.
+Привет, Iarik приглашает вас в путешествие: http://localhost:54555/acceptinvite/5.
+Привет, Iarik приглашает вас в путешествие: http://localhost:54555/acceptinvite/6.
+Привет, Iarik приглашает вас в путешествие: http://localhost:54555/acceptinvite/7.

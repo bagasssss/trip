@@ -1,0 +1,39 @@
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' [routerLink]="['/home']">Travel Planner</a>
+        </div>
+        
+        <div class='navbar-collapse collapse'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]="['active']">
+                    <a localize="myTripsPageTitle" [routerLink]="['/mytrips']"></a>
+                </li>
+                <li [routerLinkActive]="['active']">
+                    <a localize="invitedTripsPageTitle" [routerLink]="['/invitedtrips']"></a>
+                </li>
+
+            </ul>
+
+            <ul *ngIf="isLoggedIn()" class="nav navbar-nav navbar-right active">
+                <li>
+                    <a class="navbar-brand" href="javascript: " (click)="showUserInfo()">Hello, <strong>{{ getUserName() }}</strong></a>
+                </li>
+                <li>
+                    <a class='navbar-brand' href="javascript: " localize="logout" (click)="logout()"></a>
+                </li>
+            </ul>
+
+            <ul *ngIf="!isLoggedIn()" class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['/login']" localize="loginPageTitle"></a></li>
+                <li><a [routerLink]="['/register']" localize="registerPageTitle"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

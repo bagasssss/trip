@@ -1,0 +1,21 @@
+<div class="page-header" *ngIf="!isMainInfoEditMode">
+    <h1>{{ trip.title }}</h1>
+    <p>{{ trip.description }}</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-tabs">
+            <li [routerLinkActive]="['active']"><a [routerLink]="['participants']" localize="tripParticipantsTabTitle"></a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['chat']" localize="tripChatTabTitle"></a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['map']" localize="tripMapTabTitle"></a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade active in">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+

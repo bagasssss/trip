@@ -1,0 +1,35 @@
+<div class="page-header">
+    <h2 localize="tripChatTabTitle"></h2>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <div class="well">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="height: 400px; overflow-y: auto; background: whitesmoke">
+                        <div class="col-md-4">
+                            <div class="alert" [ngClass]="getMessageBoxCss(msg)" *ngFor="let msg of messages">
+                                <label>From {{ msg.author }}</label>: {{ msg.text }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input [(ngModel)]="message.text" name="msg" type="text" class="form-control" localize="enterMsgPlaceholder">
+                        <span class="input-group-btn">
+                            <button class="btn" (click)="sendMsg()" localize="sendMsgButton"></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

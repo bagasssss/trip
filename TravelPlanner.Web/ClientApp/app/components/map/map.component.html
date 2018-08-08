@@ -1,0 +1,52 @@
+<div class="row" [ngClass]="{'hidden': isReadOnlyMode}">
+    <div class="col-md-4">
+        <input placeholder="search for location" autocorrect="off" autocapitalize="off" type="text" class="form-control" #search>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-success" (click)="getDirections()">Get Directions</button>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-danger" (click)="clearDirections()">Clear Directions</button>
+    </div>
+</div>
+
+<div style="margin-top: 15px" class="row">
+    <div class="col-md-12">
+        <label localize="tripRouteEstimatedDistance"></label>: {{ estimatedDistance }}
+    </div>
+    <div class="col-md-12">
+        <label localize="tripRouteEstimatedTime"></label>: {{ estimatedTime }}
+    </div>
+    <div class="col-md-4">
+        <label localize="tripWaypointsTitle"></label>
+        <div *ngFor="let waypoint of waypoints; let i = index;">
+            <div [ngClass]="{'hidden': isReadOnlyMode}">
+                {{ waypoint.name }}
+                <a class="fa fa-edit" href="javascript: " (click)="updateWaypoint(waypoint, i)"></a>
+                <a class="fa fa-remove" href="javascript: " (click)="removeWaypoint(waypoint, i)"></a>
+            </div>
+            <div [ngClass]="{'hidden': !isReadOnlyMode}">
+                {{ waypoint.name }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="margin-top: 15px; margin-bottom: 20px" class="row">
+    <div class="col-md-12">
+        <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="true" [zoom]="zoom">
+            <agm-marker 
+                *ngFor="let m of markers; let i = index"
+                (markerClick)="addWaypoint(m, infoWindow)"
+                [latitude]="m.latLng.lat"
+                [longitude]="m.latLng.lng">
+
+                <agm-info-window #infoWindow>
+                    <strong>{{ m.label }}</strong>
+                </agm-info-window>
+
+            </agm-marker>
+        </agm-map>
+    </div>
+</div>
